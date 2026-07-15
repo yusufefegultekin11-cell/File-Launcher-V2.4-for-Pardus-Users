@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Launcher V2.4 - Pardus için Kolay Dosya Çalıştırıcı</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #1a252f;
+            color: #ecf0f1;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #2c3e50;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 4px solid #1abc9c;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        header p {
+            font-size: 1.1rem;
+            color: #bdc3c7;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .card {
+            background-color: #2c3e50;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .card h2 {
+            color: #1abc9c;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #34495e;
+            padding-bottom: 10px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #2ecc71;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+            margin-top: 15px;
+        }
+        .btn:hover {
+            background-color: #27ae60;
+        }
+        code {
+            background-color: #1a252f;
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: #e74c3c;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        pre {
+            background-color: #1a252f;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 15px 0;
+            border-left: 4px solid #3498db;
+        }
+        pre code {
+            color: #3498db;
+            padding: 0;
+            background: none;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            border-top: 1px solid #2c3e50;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>File Launcher V2.4 🚀</h1>
+        <p>Pardus XFCE üzerinde .exe, .jar ve .zip dosyalarını sağ tıklayarak saniyeler içinde çalıştırın!</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="card">
+            <h2>Proje Hakkında</h2>
+            <p>Pardus Linux işletim sisteminde Windows (.exe) veya Java (.jar) uygulamalarını terminale kod yazmadan, doğrudan çift tıklayarak veya sağ tıklayıp çalıştırabilmenizi sağlayan, Tkinter arayüzlü hafif ve hızlı bir başlatıcı yardımcı programıdır.</p>
+        </div>
+
+        <div class="card">
+            <h2>Nasıl Kurulur? (Adım Adım)</h2>
+            <p><strong>1. Gerekli motoru kurun:</strong> Terminali açıp arayüz motorunu sisteme yükleyin:</p>
+            <pre><code>sudo apt update && sudo apt install python3-tk -y</code></pre>
+
+            <p><strong>2. Programı indirin:</strong> Projeyi GitHub reposundan masaüstünüze çekin ve sağ tık entegrasyonunu tamamlayın.</p>
+            
+            <a href="https://github.com/yusufefegultekin11-cell/File-Launcher-V2.4-for-Pardus-Users" class="btn" target="_blank">GitHub'da Görüntüle</a>
+        </div>
+
+        <div class="card">
+            <h2>Özellikler</h2>
+            <ul>
+                <li><strong>Hızlı Çalıştırma:</strong> Windows uygulamalarını otomatik olarak Wine ile eşleştirir.</li>
+                <li><strong>Java Desteği:</strong> Minecraft SKlauncher veya diğer .jar dosyalarını saniyeler içinde açar.</li>
+                <li><strong>Şık Arayüz:</strong> Arka planda neyin başladığını gösteren "Developed by Yusuf Gültekin" imzalı modern durum ekranı.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Developed by Yusuf Gültekin &copy; 2026. Tüm hakları saklıdır.</p>
+    </footer>
+
+</body>
+</html>
