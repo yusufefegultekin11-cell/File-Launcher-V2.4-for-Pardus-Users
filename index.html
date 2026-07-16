@@ -106,16 +106,58 @@
             <p>Pardus Linux işletim sisteminde Windows (.exe) veya Java (.jar) uygulamalarını terminale kod yazmadan, doğrudan çift tıklayarak veya sağ tıklayıp çalıştırabilmenizi sağlayan, Tkinter arayüzlü hafif ve hızlı bir başlatıcı yardımcı programıdır.</p>
         </div>
 
-        <div class="card">
-            <h2>Nasıl Kurulur? (Adım Adım)</h2>
-            <p><strong>1. Gerekli motoru kurun:</strong> Terminali açıp arayüz motorunu sisteme yükleyin:</p>
-            <pre><code>sudo apt update && sudo apt install python3-tk -y</code></pre>
-
-            <p><strong>2. Programı indirin:</strong> Projeyi GitHub reposundan masaüstünüze çekin ve sağ tık entegrasyonunu tamamlayın.</p>
+<div class="card">
+            <h2>Adım Adım Kurulum Kılavuzu 🛠️</h2>
+            <p>File Launcher'ın sisteminizde sorunsuz çalışabilmesi için gerekli tüm adımları aşağıda bulabilirsiniz.</p>
             
-            <a href="https://github.com/yusufefegultekin11-cell/File-Launcher-V2.4-for-Pardus-Users" class="btn" target="_blank">GitHub'da Görüntüle</a>
-        </div>
+            <hr style="border: 0; height: 1px; background: #34495e; margin: 20px 0;">
 
+            <h3>1. Adım: Gerekli Tüm Sistem Araçlarını Kurun</h3>
+            <p>File Launcher arayüzünün açılması, .exe dosyalarının Wine ile çalışması ve .jar (Java) dosyalarının tetiklenmesi için gerekli olan tüm paketleri tek bir komutla kurabilirsiniz. Terminalinizi açın ve aşağıdaki komutu yapıştırıp Enter'a basın:</p>
+            <pre><code>sudo apt update && sudo apt install python3-tk wine default-jre -y</code></pre>
+            <p><em>(Bu komut; Python arayüz motorunu, Windows uygulamaları için Wine'ı ve Java tabanlı Minecraft SKlauncher gibi araçlar için Java motorunu sisteminize otomatik kurar.)</em></p>
+
+            <hr style="border: 0; height: 1px; background: #34495e; margin: 20px 0;">
+
+            <h3>2. Adım: Programı İndirin</h3>
+            <p>Aşağıdaki butona tıklayarak GitHub sayfamıza gidin, yeşil <strong>"Code"</strong> butonuna basıp <strong>"Download ZIP"</strong> diyerek projeyi bilgisayarınıza indirin. ZIP içerisindeki <code>File Launcher V2.4 (for Pardus).py</code> dosyasını Masaüstüne çıkartın.</p>
+            <a href="https://github.com/yusufefegultekin11-cell/File-Launcher-V2.4-for-Pardus-Users" class="btn" target="_blank" style="margin-bottom: 20px;">GitHub'da Görüntüle</a>[cite: 1]
+
+            <hr style="border: 0; height: 1px; background: #34495e; margin: 20px 0;">
+
+            <h3>3. Adım: Sağ Tık Entegrasyonunu Sağlayın (Masaüstünüze Göre Seçin)</h3>
+            <p>Herhangi bir exe veya jar dosyasına sağ tıkladığınızda programımızın görünebilmesi için kullandığınız masaüstü ortamına uygun adımı uygulayın:</p>
+
+            <br>
+            <h4 style="color: #3498db; margin-bottom: 8px;">A Seçeneği: Pardus GNOME (Pardus 25) Kullananlar İçin</h4>
+            <p>GNOME dosya yöneticisinde sağ tık eylemini tanımlamak için sistem genelinde bir kısayol oluşturmamız gerekir:</p>
+            <ol style="margin-left: 20px; margin-top: 5px;">
+                <li>Terminalinizi açın ve şu komutu yazarak boş bir kısayol dosyası oluşturun:</li>
+                <pre><code>nano ~/.local/share/applications/file-launcher.desktop</code></pre>
+                <li>Açılan pencereye aşağıdaki kodları aynen yapıştırın (Kullanıcı adınızı kendi sisteminize göre değiştirmeyi unutmayın):</li>
+                <pre><code>[Desktop Entry]
+Type=Application
+Name=File Launcher V2.4
+Exec=python3 "/home/KULLANICI_ADIN/Masaüstü/File Launcher V2.4 (for Pardus).py" %f
+Icon=system-run
+MimeType=application/x-ms-dos-executable;application/x-executable;application/java-archive;application/zip;
+NoDisplay=false
+Terminal=false</code></pre>
+                <li><strong>Ctrl + O</strong> yapıp Enter ile kaydedin, ardından <strong>Ctrl + X</strong> ile çıkın. Artık sağ tık eyleminiz GNOME listesinde hazır!</li>
+            </ol>
+
+            <br>
+            <h4 style="color: #2ecc71; margin-bottom: 8px;">B Seçeneği: Pardus XFCE Kullananlar İçin</h4>
+            <p>XFCE'nin Thunar dosya yöneticisinde sağ tık eylemini tanımlamak için:</p>
+            <ol style="margin-left: 20px; margin-top: 5px;">
+                <li>Thunar Dosya Yöneticisini açıp üst menüden sırasıyla <strong>"Düzenle" ➔ "Özel Eylemleri Yapılandır..."</strong> seçeneğine tıklayın.</li>
+                <li>Sağdaki <strong>+ (Artı)</strong> butonuna basarak yeni bir eylem ekleyin.</li>
+                <li><strong>Temel</strong> sekmesinde; Adı <code>File Launcher ile Aç</code> yapın, komut kısmına ise şu kodu yazın (Kullanıcı adınızı değiştirmeyi unutmayın):</li>
+                <pre><code>python3 "/home/KULLANICI_ADIN/Masaüstü/File Launcher V2.4 (for Pardus).py" %f</code></pre>
+                <li><strong>Görünüm Koşulları</strong> sekmesine geçip Dosya Deseni kutusuna <code>*.exe;*.jar;*.zip</code> yazın ve alt taraftan <strong>"Diğer Dosyalar"</strong> seçeneğini işaretleyip kaydedin.</li>
+            </ol>
+        </div>
+        
 <div class="card">
             <h2>Özellikler</h2>
             <ul>
