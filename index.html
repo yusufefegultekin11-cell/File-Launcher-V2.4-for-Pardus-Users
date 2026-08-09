@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Launcher V2.4 - Pardus için Kolay Dosya Çalıştırıcı</title>
+    <link rel="icon" type="image/png" href="logo.png">
     <style>
         * {
             box-sizing: border-box;
@@ -21,6 +22,11 @@
             padding: 40px 20px;
             text-align: center;
             border-bottom: 4px solid #1abc9c;
+        }
+        header img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 15px;
         }
         header h1 {
             font-size: 2.5rem;
@@ -49,39 +55,31 @@
             border-bottom: 2px solid #34495e;
             padding-bottom: 10px;
         }
+        .download-area {
+            text-align: center;
+            padding: 20px 0;
+        }
         .btn {
             display: inline-block;
             background-color: #2ecc71;
             color: white;
-            padding: 12px 24px;
+            padding: 16px 32px;
+            font-size: 1.2rem;
             text-decoration: none;
             font-weight: bold;
-            border-radius: 5px;
+            border-radius: 6px;
             transition: background 0.3s ease;
-            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
         }
         .btn:hover {
             background-color: #27ae60;
         }
-        code {
-            background-color: #1a252f;
-            padding: 4px 8px;
-            border-radius: 4px;
-            color: #e74c3c;
-            font-family: 'Courier New', Courier, monospace;
+        ol {
+            margin-left: 20px;
+            margin-top: 10px;
         }
-        pre {
-            background-color: #1a252f;
-            padding: 15px;
-            border-radius: 6px;
-            overflow-x: auto;
-            margin: 15px 0;
-            border-left: 4px solid #3498db;
-        }
-        pre code {
-            color: #3498db;
-            padding: 0;
-            background: none;
+        li {
+            margin-bottom: 10px;
         }
         footer {
             text-align: center;
@@ -95,75 +93,40 @@
 <body>
 
     <header>
+        <img src="logo.png" alt="File Launcher Logo">
         <h1>File Launcher V2.4 🚀</h1>
-        <p>Pardus XFCE üzerinde .exe, .jar ve .zip dosyalarını sağ tıklayarak saniyeler içinde çalıştırın!</p>
+        <p>Pardus üzerinde .exe ve .jar dosyalarını tek tıkla çalıştırın!</p>
     </header>
 
     <div class="container">
         
         <div class="card">
             <h2>Proje Hakkında</h2>
-            <p>Pardus Linux işletim sisteminde Windows (.exe) veya Java (.jar) uygulamalarını terminale kod yazmadan, doğrudan çift tıklayarak veya sağ tıklayıp çalıştırabilmenizi sağlayan, Tkinter arayüzlü hafif ve hızlı bir başlatıcı yardımcı programıdır.</p>
+            <p>Pardus Linux işletim sisteminde Windows (.exe) veya Java (.jar) uygulamalarını terminale kod yazmadan, doğrudan çift tıklayarak çalıştırmanızı sağlayan sürücü ve entegrasyon paketidir. Hem GNOME hem de XFCE masaüstü ortamlarını otomatik olarak destekler.</p>
+            
+            <div class="download-area">
+                <a href="File_launcher_2.4.1_all.deb" class="btn">📥 Pardus İçin İndir (.deb)</a>
+            </div>
         </div>
 
-<div class="card">
-            <h2>Adım Adım Kurulum Kılavuzu 🛠️</h2>
-            <p>File Launcher'ın sisteminizde sorunsuz çalışabilmesi için gerekli tüm adımları aşağıda bulabilirsiniz.</p>
-            
-            <hr style="border: 0; height: 1px; background: #34495e; margin: 20px 0;">
-
-            <h3>1. Adım: Gerekli Tüm Sistem Araçlarını Kurun</h3>
-            <p>File Launcher arayüzünün açılması, .exe dosyalarının Wine ile çalışması ve .jar (Java) dosyalarının tetiklenmesi için gerekli olan tüm paketleri tek bir komutla kurabilirsiniz. Terminalinizi açın ve aşağıdaki komutu yapıştırıp Enter'a basın:</p>
-            <pre><code>sudo apt update && sudo apt install python3-tk wine default-jre -y</code></pre>
-            <p><em>(Bu komut; Python arayüz motorunu, Windows uygulamaları için Wine'ı ve Java tabanlı Minecraft SKlauncher gibi araçlar için Java motorunu sisteminize otomatik kurar.)</em></p>
-
-            <hr style="border: 0; height: 1px; background: #34495e; margin: 20px 0;">
-
-            <h3>2. Adım: Programı İndirin</h3>
-            <p>Aşağıdaki butona tıklayarak GitHub sayfamıza gidin, yeşil <strong>"Code"</strong> butonuna basıp <strong>"Download ZIP"</strong> diyerek projeyi bilgisayarınıza indirin. ZIP içerisindeki <code>File Launcher V2.4 (for Pardus).py</code> dosyasını Masaüstüne çıkartın.</p>
-            <a href="File_launcher_2.4.1_all.deb" class="btn">Pardus İçin İndir (.deb)</a>
-
-            <hr style="border: 0; height: 1px; background: #34495e; margin: 20px 0;">
-
-            <h3>3. Adım: Sağ Tık Entegrasyonunu Sağlayın (Masaüstünüze Göre Seçin)</h3>
-            <p>Herhangi bir exe veya jar dosyasına sağ tıkladığınızda programımızın görünebilmesi için kullandığınız masaüstü ortamına uygun adımı uygulayın:</p>
-
-            <br>
-            <h4 style="color: #3498db; margin-bottom: 8px;">A Seçeneği: Pardus GNOME (Pardus 25) Kullananlar İçin</h4>
-            <p>GNOME dosya yöneticisinde sağ tık eylemini tanımlamak için sistem genelinde bir kısayol oluşturmamız gerekir:</p>
-            <ol style="margin-left: 20px; margin-top: 5px;">
-                <li>Terminalinizi açın ve şu komutu yazarak boş bir kısayol dosyası oluşturun:</li>
-                <pre><code>nano ~/.local/share/applications/file-launcher.desktop</code></pre>
-                <li>Açılan pencereye aşağıdaki kodları aynen yapıştırın (Kullanıcı adınızı kendi sisteminize göre değiştirmeyi unutmayın):</li>
-                <pre><code>[Desktop Entry]
-Type=Application
-Name=File Launcher V2.4
-Exec=python3 "/home/KULLANICI_ADIN/Masaüstü/File Launcher V2.4 (for Pardus).py" %f
-Icon=system-run
-MimeType=application/x-ms-dos-executable;application/x-executable;application/java-archive;application/zip;
-NoDisplay=false
-Terminal=false</code></pre>
-                <li><strong>Ctrl + O</strong> yapıp Enter ile kaydedin, ardından <strong>Ctrl + X</strong> ile çıkın. Artık sağ tık eyleminiz GNOME listesinde hazır!</li>
-            </ol>
-
-            <br>
-            <h4 style="color: #2ecc71; margin-bottom: 8px;">B Seçeneği: Pardus XFCE Kullananlar İçin</h4>
-            <p>XFCE'nin Thunar dosya yöneticisinde sağ tık eylemini tanımlamak için:</p>
-            <ol style="margin-left: 20px; margin-top: 5px;">
-                <li>Thunar Dosya Yöneticisini açıp üst menüden sırasıyla <strong>"Düzenle" ➔ "Özel Eylemleri Yapılandır..."</strong> seçeneğine tıklayın.</li>
-                <li>Sağdaki <strong>+ (Artı)</strong> butonuna basarak yeni bir eylem ekleyin.</li>
-                <li><strong>Temel</strong> sekmesinde; Adı <code>File Launcher ile Aç</code> yapın, komut kısmına ise şu kodu yazın (Kullanıcı adınızı değiştirmeyi unutmayın):</li>
-                <pre><code>python3 "/home/KULLANICI_ADIN/Masaüstü/File Launcher V2.4 (for Pardus).py" %f</code></pre>
-                <li><strong>Görünüm Koşulları</strong> sekmesine geçip Dosya Deseni kutusuna <code>*.exe;*.jar;*.zip</code> yazın ve alt taraftan <strong>"Diğer Dosyalar"</strong> seçeneğini işaretleyip kaydedin.</li>
+        <div class="card">
+            <h2>Kolay Kurulum Kılavuzu 🛠️</h2>
+            <p>Artık terminal komutlarıyla uğraşmanıza gerek yok!</p>
+            <ol>
+                <li>Yukarıdaki <strong>"Pardus İçin İndir (.deb)"</strong> butonuna basarak paketi indirin.</li>
+                <li>İnen <code>File_launcher_2.4.1_all.deb</code> dosyasına çift tıklayın.</li>
+                <li>Açılan <strong>Pardus Paket Kurucu</strong> penceresinde <strong>"Paketi Kur"</strong> butonuna basın ve şifrenizi girin.</li>
+                <li>Sistem gerekli Python, Wine ve Java bağımlılıklarını otomatik olarak yükleyecektir.</li>
+                <li>Kurulum bittiğinde herhangi bir <code>.exe</code> veya <code>.jar</code> dosyasına sağ tıklayıp <strong>File Launcher V2.4</strong> ile açabilirsiniz!</li>
             </ol>
         </div>
         
-<div class="card">
+        <div class="card">
             <h2>Özellikler</h2>
             <ul>
-                <li><strong>Hızlı Çalıştırma:</strong> Windows uygulamalarını otomatik olarak Wine ile eşleştirir.</li>
-                <li><strong>Java Desteği:</strong> Sisteminizdeki tüm .jar (Java) dosyalarını saniyeler içinde açar.</li>
-                <li><strong>Şık Arayüz:</strong> Arka planda hangi uygulamanın başladığını gösteren modern, sade ve hızlı durum ekranı.</li>
+                <li><strong>Sıfır Terminal Kullanımı:</strong> Kurulumdan çalıştırmaya kadar hiçbir kod yazmanız gerekmez.</li>
+                <li><strong>Çift Masaüstü Desteği:</strong> Hem Pardus GNOME hem de Pardus XFCE ile tam uyumludur.</li>
+                <li><strong>Otomatik Motor Eşleme:</strong> Windows uygulamalarını Wine, Java uygulamalarını Java çalıştırma motoru ile otomatik bağlar.</li>
             </ul>
         </div>
 
